@@ -1,19 +1,22 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent } from "./ui/card";
-import { Textarea } from "./ui/textarea";
-import { Input } from "./ui/input";
+import { Card, CardContent } from "../ui/card";
+import { Textarea } from "../ui/textarea";
+import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "./ui/form";
-import { Button } from "./ui/button";
-
-type Area = "environmental" | "social" | "governance" | "other";
-type Event = "one-time" | "long-term";
-type Support = "financial" | "material" | "expertise" | "other";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "../ui/form";
+import { Button } from "../ui/button";
+import { type Area, type Event, type Support } from "./SearForm.types";
 
 const formSchema = z.object({
   location: z
