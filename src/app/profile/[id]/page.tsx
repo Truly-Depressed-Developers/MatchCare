@@ -6,6 +6,8 @@ import Link from "next/link";
 const Profile = ({ params }: { params: { id: string } }) => {
   const profileID = params.id;
 
+  console.log(profileID);
+
   return (
     <div className="flex min-h-screen flex-col">
       <div className="relative inset-0 flex h-32 justify-center bg-blue-400">

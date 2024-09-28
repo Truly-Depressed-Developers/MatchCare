@@ -66,7 +66,7 @@ const MobileMenu = () => {
     <div className="md:hidden">
       <Sheet>
         <SheetTrigger asChild>
-          <Menu size={36} className="absolute right-2 top-2" />
+          <Menu size={36} className="absolute right-2 top-2 z-50" />
         </SheetTrigger>
         <SheetContent>
           <div className="flex min-h-screen flex-col items-center justify-center space-y-4 text-xl">
