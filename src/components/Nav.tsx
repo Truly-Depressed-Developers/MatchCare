@@ -2,7 +2,12 @@
 
 import * as React from "react";
 import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -37,9 +42,9 @@ const DesktopMenu = () => {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/example" legacyBehavior passHref>
+            <Link href="/search" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Example
+                Search NGOs
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
@@ -66,13 +71,19 @@ const MobileMenu = () => {
         <SheetContent>
           <div className="flex min-h-screen flex-col items-center justify-center space-y-4 text-xl">
             <div>
-              <Link href="/profile/1">Profile</Link>
+              <SheetClose asChild>
+                <Link href="/profile/1">Profile</Link>
+              </SheetClose>
             </div>
             <div>
-              <Link href="/example">Example</Link>
+              <SheetClose asChild>
+                <Link href="/search">Search NGOs</Link>
+              </SheetClose>
             </div>
             <div>
-              <Link href="/example">Example</Link>
+              <SheetClose asChild>
+                <Link href="/example">Example</Link>
+              </SheetClose>
             </div>
           </div>
         </SheetContent>
