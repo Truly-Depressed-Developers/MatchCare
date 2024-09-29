@@ -6,56 +6,63 @@ import {
   UserRoundPlus,
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { exampleProfile } from "../../../../mocks/data";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Project from "@/components/Project/Project";
 import { Card } from "@/components/ui/card";
+import prisma from "@/../db/db";
 
-const Profile = ({ params }: { params: { id: string } }) => {
-  const profileID = params.id;
+const Profile = async ({ params }: { params: { id: string } }) => {
+  const ngo = await prisma.nGO.findUnique({
+    where: {
+      id: parseInt(params.id),
+    },
+    include: {
+      projects: true,
+    },
+  });
 
-  console.log(profileID);
+  if (!ngo) {
+    return null;
+  }
 
   return (
     <Card className="mx-auto mb-10 flex min-h-screen max-w-3xl flex-col">
       <div className="relative inset-0 flex h-52 bg-blue-400">
         <div className="absolute -bottom-11 left-4 h-[11.125em] w-[11.125rem] rounded-full bg-white"></div>
         <Avatar className="absolute -bottom-10 left-5">
-          <AvatarImage src={exampleProfile.image} />
-          <AvatarFallback>
-            {exampleProfile.name[0].toUpperCase()}
-          </AvatarFallback>
+          <AvatarImage src={ngo.image} />
+          <AvatarFallback>{ngo.name[0].toUpperCase()}</AvatarFallback>
         </Avatar>
       </div>
       <div className="mt-12 space-y-2 px-6">
-        <h1 className="text-xl font-semibold">{exampleProfile.name}</h1>
-        <h2 className="text-sm font-light">{exampleProfile.bio}</h2>
+        <h1 className="text-xl font-semibold">{ngo.name}</h1>
+        <h2 className="text-sm font-light">{ngo.bio}</h2>
         <h2 className="flex items-center text-sm">
           <MapPin size={14} className="mr-2" />
-          Location: {exampleProfile.location}
+          Location: {ngo.location}
         </h2>
         <h2 className="flex items-center text-sm">
           <Earth size={14} className="mr-2" />
           Areas of impact:{"\u00A0"}
-          {exampleProfile.areasOfImpact.map((area, index) => (
+          {ngo.areasOfImpact.map((area, index) => (
             <span key={index}>
               {area}
-              {index < exampleProfile.areasOfImpact.length - 1 && ",\u00A0"}
+              {index < ngo.areasOfImpact.length - 1 && ",\u00A0"}
             </span>
           ))}
         </h2>
         <Link
           className="flex items-center text-sm"
-          href={exampleProfile.link}
+          href={ngo.link}
           rel="noopener noreferrer"
           target="_blank"
         >
           <LinkIcon size={14} className="mr-2" />
           Website: {"\u00A0"}
           <span className="underline">
-            {exampleProfile.link.replace(/^https?:\/\//, "")}
+            {ngo.link.replace(/^https?:\/\//, "")}
           </span>
         </Link>
       </div>
@@ -81,17 +88,17 @@ const Profile = ({ params }: { params: { id: string } }) => {
       <Separator />
       <div className="my-6 mb-9 px-6">
         <h1 className="text-lg">General information</h1>
-        <p className="text-sm">{exampleProfile.generalInfo}</p>
+        <p className="text-sm">{ngo.generalInfo}</p>
       </div>
       <Separator />
       <div className="my-8 px-6">
         <h1 className="text-lg">Adress</h1>
-        <p className="text-sm">{exampleProfile.adress}</p>
+        <p className="text-sm">{ngo.address}</p>
       </div>
       <Separator />
       <div className="my-8 space-y-10 px-6">
         <h1 className="text-lg">Past Projects</h1>
-        {exampleProfile.projects.map((project, index) => (
+        {ngo.projects.map((project, index) => (
           <Project key={index} {...project} />
         ))}
       </div>
