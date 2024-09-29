@@ -9,7 +9,7 @@ import {
   FormMessage,
 } from "../../ui/form";
 import { Card } from "../../ui/card";
-import { NGOOfficeAddressData, NGOSubTypes } from "../StepForm";
+import { NGOOfficeAddressData, NGOSubTypes } from "../StepForm.types";
 import React from "react";
 import { Button } from "../../ui/button";
 

@@ -1,4 +1,4 @@
-import { NGORecipientData, NGOSubTypes } from "../StepForm";
+import { NGORecipientData, NGOSubTypes } from "../StepForm.types";
 import React, { useEffect } from "react";
 import { Button } from "../../ui/button";
 import { Checkbox } from "../../ui/checkbox";
