@@ -1,10 +1,10 @@
-import NGOForm from "@/components/NGOForm";
+import StepForm from "@/components/NGOStepForm/StepForm";
 
 const NGOPage = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
-      <div className="mx-auto w-full max-w-md">
-        <NGOForm />
+      <div className="mx-auto w-full">
+        <StepForm />
       </div>
     </div>
   );
