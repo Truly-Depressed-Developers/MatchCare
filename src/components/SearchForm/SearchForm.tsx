@@ -246,9 +246,7 @@ const SearchForm = () => {
           <Button
             type="submit"
             className="my-10 rounded-3xl px-10 py-5 font-bold"
-            onClick={() =>
-              form.formState.isValid ? router.push("/search/results") : null
-            }
+            onClick={() => router.push("/search/results")}
           >
             Submit
           </Button>
