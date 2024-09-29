@@ -2,6 +2,9 @@
 
 Platform allowing seamless and easy connection between Business and NGO's utilizing possibilities off Artificial Intelligence.
 
+# DEMO !!!
+https://youtu.be/cSQosycbfjc
+
 ## Motivation
 
 **MatchCare** was created at <a href="https://hackyeah.pl/" target="_blank">HackYeah</a> 2024 Hackathon.
