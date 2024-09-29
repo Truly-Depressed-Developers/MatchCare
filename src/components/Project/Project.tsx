@@ -3,8 +3,8 @@ import { Type } from "./Project.types";
 import { Project as ProjectType } from "@prisma/client";
 
 const Project = (project: ProjectType) => {
-  const countDuration = (startDate: Date, endDate?: Date): string => {
-    if (!endDate)
+  const countDuration = (startDate: Date, endDate: Date | null): string => {
+    if (endDate === null)
       return `${new Date().getFullYear() - startDate.getFullYear()} yrs`;
 
     const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
@@ -14,7 +14,9 @@ const Project = (project: ProjectType) => {
     return `${years} yrs ${months} mos`;
   };
 
-  const formatDate = (date: Date): string => {
+  const formatDate = (date: Date | null): string | boolean => {
+    if (date === null) return false;
+
     return date.toLocaleDateString();
   };
 
@@ -25,7 +27,7 @@ const Project = (project: ProjectType) => {
         <h1 className="text-sm">{project.name}</h1>
         <div className="flex space-x-4 text-[10px] leading-4">
           <p>
-            {formatDate(project.startDate)} —{" "}
+            {formatDate(project.startDate)} -{" "}
             {formatDate(project.endDate) || "Present"}
           </p>
           <p className="text-blue-600">
