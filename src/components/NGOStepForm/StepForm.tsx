@@ -10,7 +10,7 @@ import {
   NGORegAddressData,
   NGORegistrationData,
   NGOSubTypes,
-} from "./StepForm";
+} from "./StepForm.types";
 import { Card } from "../ui/card";
 import StepFormStatusBar from "./StepForm-status-bar";
 import { Separator } from "../ui/separator";

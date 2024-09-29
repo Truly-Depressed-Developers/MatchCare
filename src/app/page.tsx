@@ -1,10 +1,14 @@
-import Link from "next/link";
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-around">
-      <Link href="/company">Company</Link>
-      <Link href="/ngo">NGO</Link>
-    </div>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/search");
+  }, []);
+
+  return;
 }

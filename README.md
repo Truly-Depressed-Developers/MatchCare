@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## MatchCare
 
-## Getting Started
+Platform allowing seamless and easy connection between Business and NGO's utilizing possibilities off Artificial Intelligence.
 
-First, run the development server:
+## Motivation
+
+**MatchCare** was created at <a href="https://hackyeah.pl/" target="_blank">HackYeah</a> 2024 Hackathon.
+
+- Topic: Social Impact Bridge by Serdeczna Fundacja Hearty
+- Timeframe: 28-29.04.2024, 24 hours
+
+## Run on local environment
+
+<span style="color: red;">Requires Node.js 18.17 or later</span>
+
+First, clone the repository and install packages:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Truly-Depressed-Developers/hackyeah2024.git
+
+cd hackyeah2024
+
+pnpm install
+```
+
+Then, run the development server:
+
+```bash
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<center> 
+<h1> Tech Stack </h1>
+<img alt="NEXT.JS" src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white"/>
+<img alt="REACTJS" src="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black"/>
+<img alt="TYPESCRIPT" src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white"/>
+</br>
+<img alt="TYPESCRIPT" src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white"/>
+<img alt="TYPESCRIPT" src="https://img.shields.io/badge/shadcn/ui-000000.svg?style=for-the-badge&logo=shadcn/ui&logoColor=white"/>
+</center>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Presentation
 
-## Learn More
+[Presentation](https://www.canva.com/design/DAGSIQrtbvE/hBk1GX737DuRCdAPA0pxWA/edit?utm_content=DAGSIQrtbvE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-To learn more about Next.js, take a look at the following resources:
+## Authors
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [@CALLmeDOMIN](https://github.com/CALLmeDOMIN)
+- [@sosek1](https://github.com/sosek1)
+- [@BPajda](https://github.com/BPajda)
+- [@MSiorr](https://github.com/MSiorr)
+- [@tobi303x](https://github.com/tobi303x)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under [MIT](./LICENSE) license.

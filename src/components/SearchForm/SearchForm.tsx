@@ -17,6 +17,7 @@ import {
 } from "../ui/form";
 import { Button } from "../ui/button";
 import { type Area, type Event, type Support } from "./SearForm.types";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   location: z
@@ -29,6 +30,8 @@ const formSchema = z.object({
 });
 
 const SearchForm = () => {
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -243,6 +246,9 @@ const SearchForm = () => {
           <Button
             type="submit"
             className="my-10 rounded-3xl px-10 py-5 font-bold"
+            onClick={() =>
+              form.formState.isValid ? router.push("/search/results") : null
+            }
           >
             Submit
           </Button>

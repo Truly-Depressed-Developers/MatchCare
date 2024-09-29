@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Menu, Search } from "lucide-react";
+import { Menu, Plus, Search } from "lucide-react";
 import {
   Sheet,
   SheetClose,
@@ -49,6 +49,19 @@ const DesktopMenu = () => {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
+            <Link
+              href="/new"
+              className="flex items-center"
+              legacyBehavior
+              passHref
+            >
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <Plus size={16} className="mr-2" />
+                Create an NGO
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
             <Link href="/profile/1" legacyBehavior passHref>
               <NavigationMenuLink
                 className={cn(
@@ -86,6 +99,11 @@ const MobileMenu = () => {
             <div>
               <SheetClose asChild>
                 <Link href="/search">Search NGOs</Link>
+              </SheetClose>
+            </div>
+            <div>
+              <SheetClose asChild>
+                <Link href="/new">Create an NGO</Link>
               </SheetClose>
             </div>
           </div>
