@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Menu } from "lucide-react";
+import { Menu, Search } from "lucide-react";
 import {
   Sheet,
   SheetClose,
@@ -17,6 +17,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 export function Nav() {
   return (
@@ -31,27 +32,34 @@ export default Nav;
 
 const DesktopMenu = () => {
   return (
-    <div className="hidden h-12 items-center justify-center space-x-4 text-lg md:flex">
+    <div className="hidden h-16 justify-end text-lg md:flex">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link href="/profile/1" legacyBehavior passHref>
+            <Link
+              href="/search"
+              className="flex items-center"
+              legacyBehavior
+              passHref
+            >
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Profile
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/search" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <Search size={16} className="mr-2" />
                 Search NGOs
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/example" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Example
+            <Link href="/profile/1" legacyBehavior passHref>
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  "flex items-center hover:bg-transparent focus:bg-transparent",
+                )}
+              >
+                <Avatar>
+                  <AvatarImage src={"/image.png"} />
+                  <AvatarFallback>A</AvatarFallback>
+                </Avatar>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
@@ -78,11 +86,6 @@ const MobileMenu = () => {
             <div>
               <SheetClose asChild>
                 <Link href="/search">Search NGOs</Link>
-              </SheetClose>
-            </div>
-            <div>
-              <SheetClose asChild>
-                <Link href="/example">Example</Link>
               </SheetClose>
             </div>
           </div>

@@ -31,8 +31,8 @@ const Profile = async ({ params }: { params: { id: string } }) => {
     <Card className="mx-auto mb-10 flex min-h-screen max-w-3xl flex-col">
       <div className="relative inset-0 flex h-52 bg-blue-400">
         <div className="absolute -bottom-11 left-4 h-[11.125em] w-[11.125rem] rounded-full bg-white"></div>
-        <Avatar className="absolute -bottom-10 left-5">
-          <AvatarImage src={ngo.image} />
+        <Avatar className="absolute -bottom-10 left-5 h-[10.625rem] w-[10.625rem]">
+          <AvatarImage src={"/" + ngo.image} />
           <AvatarFallback>{ngo.name[0].toUpperCase()}</AvatarFallback>
         </Avatar>
       </div>
