@@ -31,7 +31,7 @@ export default Nav;
 
 const DesktopMenu = () => {
   return (
-    <div className="hidden h-16 items-center justify-center space-x-4 text-lg md:flex">
+    <div className="hidden h-12 items-center justify-center space-x-4 text-lg md:flex">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
