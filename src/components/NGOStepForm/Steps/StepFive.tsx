@@ -1,16 +1,5 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { set, useForm } from "react-hook-form";
-import { z } from "zod";
-import {
-  Form,
-  FormControl,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../../ui/form";
-import { Card } from "../../ui/card";
-import { NGOAreaData, NGORegistrationData, NGOSubTypes } from "../StepForm";
-import React, { use, useEffect } from "react";
+import { NGOAreaData, NGOSubTypes } from "../StepForm";
+import React, { useEffect } from "react";
 import { Button } from "../../ui/button";
 import { Checkbox } from "../../ui/checkbox";
 

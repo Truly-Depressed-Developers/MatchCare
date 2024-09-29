@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   NGOAreaData,
   NGOContactData,
@@ -14,7 +14,6 @@ import {
 import { Card } from "../ui/card";
 import StepFormStatusBar from "./StepForm-status-bar";
 import { Separator } from "../ui/separator";
-import { Button } from "../ui/button";
 import StepOne from "./Steps/StepOne";
 import StepTwo from "./Steps/StepTwo";
 import StepThree from "./Steps/StepThree";
@@ -80,6 +79,10 @@ const StepForm = () => {
     description: "",
   });
 
+  useEffect(() => {
+    setMaxSteps(Object.keys(stepTitles).length);
+  }, []);
+
   const handleStepOne = (data: NGOContactData) => {
     setFormData((prev) => ({ ...prev, contact: data }));
   };
@@ -127,17 +130,6 @@ const StepForm = () => {
     setTimeout(() => {
       window.location.href = "/";
     }, 2000);
-  };
-
-  const handleChange = (
-    section: keyof NGOFormData,
-    field: string,
-    value: string,
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [section]: { ...(prev[section] as object), [field]: value },
-    }));
   };
 
   const getTitle = (

@@ -9,11 +9,7 @@ import {
   FormMessage,
 } from "../../ui/form";
 import { Card } from "../../ui/card";
-import {
-  NGODescriptionData,
-  NGORegistrationData,
-  NGOSubTypes,
-} from "../StepForm";
+import { NGODescriptionData, NGOSubTypes } from "../StepForm";
 import React from "react";
 import { Button } from "../../ui/button";
 
@@ -50,7 +46,7 @@ const StepSeven = (props: {
             htmlFor="krs"
             className="mb-2 text-lg font-medium text-gray-400"
           >
-            Is there any additional information you'd like to provide?
+            Is there any additional information you&apos;d like to provide?
           </FormLabel>
           <FormControl>
             <Card className="h-fit min-h-16 w-full rounded-3xl">

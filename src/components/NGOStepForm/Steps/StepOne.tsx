@@ -10,7 +10,7 @@ import {
 } from "../../ui/form";
 import { Card } from "../../ui/card";
 import { NGOContactData, NGOSubTypes } from "../StepForm";
-import React, { forwardRef } from "react";
+import React from "react";
 import { Button } from "../../ui/button";
 
 const StepSchema = z.object({
