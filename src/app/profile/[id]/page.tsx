@@ -23,7 +23,7 @@ const Profile = ({ params }: { params: { id: string } }) => {
       <div className="relative inset-0 flex h-52 bg-blue-400">
         <div className="absolute -bottom-11 left-4 h-[11.125em] w-[11.125rem] rounded-full bg-white"></div>
         <Avatar className="absolute -bottom-10 left-5">
-          <AvatarImage src={exampleProfile.avatar} />
+          <AvatarImage src={exampleProfile.image} />
           <AvatarFallback>
             {exampleProfile.name[0].toUpperCase()}
           </AvatarFallback>
