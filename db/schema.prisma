@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+ 
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") 
+  directUrl = env("POSTGRES_URL_NON_POOLING") 
+}
+ 
+model NGO {
+  id             Int       @id @default(autoincrement())
+  name           String    @unique
+  bio            String
+  image          String
+  banner         String
+  areasOfImpact  String[]
+  location       String
+  address        String
+  generalInfo    String
+  link           String
+  createdAt      DateTime  @default(now())
+  projects       Project[]
+}
+
+model Project {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  type        String
+  startDate   DateTime
+  endDate     DateTime?
+  description String
+  ngoID       Int
+  createdAt   DateTime  @default(now())
+
+  ngo         NGO       @relation(fields: [ngoID], references: [id])
+}
