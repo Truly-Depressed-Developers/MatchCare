@@ -2,13 +2,7 @@
 
 Platform allowing seamless and easy connection between Business and NGO's utilizing possibilities off Artificial Intelligence.
 
-# DEMO !!!
-https://youtu.be/cSQosycbfjc
-
-# API
-https://github.com/Truly-Depressed-Developers/HackYeah2024Api
-# DEMO API
-https://www.youtube.com/watch?v=OkRI5kto7-E
+[Backend API](https://github.com/Truly-Depressed-Developers/HackYeah2024Api)
 
 ## Motivation
 
@@ -24,9 +18,9 @@ https://www.youtube.com/watch?v=OkRI5kto7-E
 First, clone the repository and install packages:
 
 ```bash
-git clone https://github.com/Truly-Depressed-Developers/hackyeah2024.git
+git clone https://github.com/Truly-Depressed-Developers/matchcare
 
-cd hackyeah2024
+cd matchcare
 
 pnpm install
 ```
@@ -51,8 +45,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Presentation
 
-[Presentation](https://www.canva.com/design/DAGSIQrtbvE/hBk1GX737DuRCdAPA0pxWA/edit?utm_content=DAGSIQrtbvE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-[Figma](https://www.figma.com/design/d6D1HwRJl70OTh82qMSKFY/fudacja_hearty?node-id=0-1&node-type=canvas&t=3EK5FoYvwzh1AmaJ-0)
+[Demo](https://youtu.be/cSQosycbfjc) </br>
+[Presentation](https://www.canva.com/design/DAGSIQrtbvE/hBk1GX737DuRCdAPA0pxWA/edit?utm_content=DAGSIQrtbvE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) </br>
+[Figma](https://www.figma.com/design/d6D1HwRJl70OTh82qMSKFY/fudacja_hearty?node-id=0-1&node-type=canvas&t=3EK5FoYvwzh1AmaJ-0) </br>
 [FigJam](https://www.figma.com/board/HU6fqT6cDXWVxtw1FZ1uhK/hackhaton?node-id=0-1&node-type=canvas&t=8tmzD0wOP5PaxoB9-0)
 
 ## Authors
