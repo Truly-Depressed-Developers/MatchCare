@@ -3,6 +3,7 @@
 Platform allowing seamless and easy connection between Business and NGO's utilizing possibilities off Artificial Intelligence.
 
 [Backend API](https://github.com/Truly-Depressed-Developers/HackYeah2024Api)
+[Finalists Certificate](./public/certificate.pdf)
 
 ## Motivation
 
