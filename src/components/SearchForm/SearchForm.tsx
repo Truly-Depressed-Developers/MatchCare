@@ -45,11 +45,33 @@ const SearchForm = () => {
   const [support, setSupport] = React.useState<Support>("financial");
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log("area", area);
-    console.log("event", event);
-    console.log("value of location", values.location);
-    console.log("support", support);
-    console.log("additionalInfo", values.additionalInfo);
+    const [city, region, country] = values.location.split(",");
+    console.log(region);
+    console.log(values);
+    fetch("http://127.0.0.1:5000/query", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: values.additionalInfo,
+        n_results: 5,
+        where: { Województwo: "małopolskie" },
+        include: ["documents", "distances", "metadatas"],
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
   };
 
   return (
@@ -246,7 +268,6 @@ const SearchForm = () => {
           <Button
             type="submit"
             className="my-10 rounded-3xl px-10 py-5 font-bold"
-            onClick={() => router.push("/search/results")}
           >
             Submit
           </Button>
